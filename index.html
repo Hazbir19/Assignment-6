@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ba8fb80fc0.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .lato {
+            font-family: "Lato", sans-serif;
+        }
+    </style>
+    <title>Assigment 6</title>
+
+</head>
+
+<body class=" lato">
+    <!-- Nabver Start -->
+    <nav class="flex justify-between my-[3.25rem] max-w-screen-xl mx-auto">
+        <!-- logo and Name -->
+        <div class="flex">
+            <img src="./images/logo.webp" alt="">
+            <p class="ml-5 text-3xl">Peddy</p>
+        </div>
+        <!-- Nav List -->
+        <div class="list-none flex justify-evenly">
+            <li class="ml-5 text-lg">Home</li>
+            <li class="ml-5 text-lg">Shop</li>
+            <li class="ml-5 text-lg">Contact</li>
+        </div>
+        <!-- user -->
+        <div class="border p-4 rounded-full flex items-center justify-center">
+            <i class="fa-regular fa-user"></i>
+        </div>
+    </nav>
+    <!-- Nabver End -->
+    <main class="max-w-screen-xl mx-auto">
+        <!-- Hero Section -->
+        <section class="flex flex-col justify-center items-center">
+            <div>
+                <!-- Title -->
+                <h1 class="text-lg text-center">Bringing Families Together ❤️‍🔥<br>
+
+                    <span class="lg:text-7xl text-2xl font-bold ">Your Path to Adoption <br> Starts Here</span>
+                </h1>
+                <p class="lg:w-1/2 lg:mx-auto mx-2 my-10">It is a long established fact that a reader will be distracted
+                    by
+                    the
+                    readable content
+                    of a page when
+                    looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+            <button class="bg-[#0E7A81] text-white p-5 rounded-md font-bold text-xl">View More</button>
+            <div>
+                <img src="./images/pet.webp" alt="">
+            </div>
+        </section>
+        <!-- Catagories Section -->
+        <section class="my-[5rem]">
+            <div class="my-5">
+                <h1 class="mt-5 text-5xl text-center font-bold">Adopt Your Best Friend</h1>
+                <p class="w-1/2 mx-auto my-5">It is a long established fact that a reader will be distracted by the
+                    readable
+                    content
+                    of a page when
+                    looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+            <!-- Catagories -->
+            <div id="cata-btn" class="lg:flex justify-center"></div>
+            <div class="flex justify-between items-center">
+                <div class="">
+                    <h1 class="text-2xl font-bold">Best Deal For you</h1>
+                </div>
+                <div class="bg-[#0E7A81] text-white p-3 rounded-xl">
+                    <button class="text-2xl">Sort by Price</button>
+                </div>
+            </div>
+            <!-- Cards -->
+            <div class="cardCantrainer flex justify-between items-center">
+                <div class="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="cards"></div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-[#131313]">
+        <div
+            class="max-w-screen-xl mx-auto flex text-white lg:justify-around flex-col lg:flex-row items-center lg:items-start">
+            <div class="my-5">
+                <div class="flex my-5">
+                    <img src="./images/logo.webp" alt="" class="w-8">
+                    <h1 class="text-2xl ml-2">Peddy</h1>
+                </div>
+                <div class="list-none">
+                    <li>Location: av. Washington 165, NY CA 54003</li>
+                    <li>Phone: +31 85 964 47 25</li>
+                    <li>Email: info@yourdomain.com</li>
+                    <li>Openings hours: 9.00 AM - 5.00 PM</li>
+                </div>
+                <div class="my-5">
+                    <ul class="flex">
+                        <div
+                            class="bg-gradient-to-r from-[#FFB6C1] to-purple-500 p-1 w-[3rem] h-[3rem] rounded-full flex justify-center items-center cursor-pointer mx-2 text-5xl">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-[#FFB6C1] to-purple-500 p-1 w-[3.2rem] h-[3.2rem] rounded-xl flex justify-center items-center cursor-pointer mx-2 text-5xl">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div
+                            class="bg-black p-1 w-[3.2rem] h-[3.2rem] rounded-xl flex justify-center items-center cursor-pointer mx-2 text-5xl">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </div>
+                        <div
+                            class="bg-red-500 p-1 w-[3.7rem] h-[3.2rem] rounded-xl flex justify-center items-center cursor-pointer mx-2 text-5xl">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- 2nd line -->
+            <div class="my-5">
+                <div>
+                    <h1 class="text-2xl text-center ">Useful Links</h1>
+                </div>
+                <div class="list-none">
+                    <li class="my-3"> Home</li>
+                    <li class="my-3"> About Us</li>
+                    <li class="my-3">Animals</li>
+                    <li class="my-3">Foundation</li>
+                    <li class="my-3">Contact</li>
+                </div>
+            </div>
+            <!-- 3rd line -->
+            <div class="">
+                <div>
+                    <h1 class="text-2xl text-center mt-20">Drop a Message </h1>
+                </div>
+                <div class="my-10">
+                    <input type="text" placeholder="Enter your email" class="bg-[#FFFFFF0D] p-5 rounded-xl">
+                </div>
+                <div>
+                    <button class="bg-[#0E7A81] rounded-xl p-5 w-full ">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

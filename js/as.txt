@@ -1,0 +1,57 @@
+const displayCard = (data) => {
+  data.pets.forEach((pet) => {
+    let cardContrainer = document.getElementById("cards");
+    //cardContrainer.innerHTML = "";
+    const petCard = document.createElement("div");
+    petCard.classList = " petCard p-5 rounded-xl border my-5 ";
+    petCard.innerHTML = `<img src="${data.image}" class=" w-[25rem] rounded-xl"/>
+<div class="">
+  <h1 class="text-2xl font-bold my-4">'${data.pet_name}'</h1>
+  <p> Breed: '${data.breed}'</p>
+  <p> Birth: '${pet.date_of_birth}'</p>
+  <p><i class="fa-solid fa-venus-mars"></i> '${data.gender}'</p>
+  <p> Price: '$ ${data.price}'</p>
+  <hr class="border-gray-200 my-2"/>
+</div>
+<div class="flex gap-5 justify-around">
+  <div class="p-5 border border-[#0E7A8126] my-5 rounded-lg cursor-pointer">
+  <i class="fa-regular fa-thumbs-up"></i>
+  </div>
+  <div class="p-5 border border-[#0E7A8126] my-5 rounded-lg cursor-pointer text-[#0E7A81] font-bold">
+  Adopt
+  </div>
+  <div class="p-5 border border-[#0E7A8126] my-5 rounded-lg cursor-pointer text-[#0E7A81] font-bold">
+  Details
+  </div>
+</div>`;
+    cardContrainer.append(petCard);
+  });
+};
+
+      fed.data.forEach((data) => {
+        let cardContrainer = document.getElementById("cards");
+        cardContrainer.innerHTML = "";
+        const petCard = document.createElement("div");
+        petCard.classList = " petCard p-5 rounded-xl border my-5 ";
+        petCard.innerHTML = `<img src="${data.image}" class=" w-[25rem] rounded-xl"/>
+      <div class="">
+        <h1 class="text-2xl font-bold my-4">'${data.pet_name}'</h1>
+        <p> Breed: '${data.breed}'</p>
+        <p> Birth: '${data.date_of_birth}'</p>
+        <p><i class="fa-solid fa-venus-mars"></i> '${data.gender}'</p>
+        <p> Price: '$ ${data.price}'</p>
+        <hr class="border-gray-200 my-2"/>
+      </div>
+      <div class="flex gap-5 justify-around">
+        <div class="p-5 border border-[#0E7A8126] my-5 rounded-lg cursor-pointer">
+        <i class="fa-regular fa-thumbs-up"></i>
+        </div>
+        <div class="p-5 border border-[#0E7A8126] my-5 rounded-lg cursor-pointer text-[#0E7A81] font-bold">
+        Adopt
+        </div>
+        <div class="p-5 border border-[#0E7A8126] my-5 rounded-lg cursor-pointer text-[#0E7A81] font-bold" onclick="detailBtn()" >
+        Details
+        </div>
+      </div>`;
+        cardContrainer.append(petCard);
+      });
