@@ -6,19 +6,25 @@ function btnfunc(id) {
       );
       let fed = await catagor3.json();
       let pets = fed.data;
-      document.getElementById("cards").innerHTML = ""; // Clear existing cards
+      document.getElementById("cards").innerHTML = "";
       if (pets && pets.length > 0) {
         displayCategoryCards(pets);
+        currentPets = pets;
       } else {
         document.getElementById("cards").innerHTML =
           "<p>No pets found in this category.</p>";
+        currentPets = [];
       }
     } catch (error) {
       console.log("error", error);
     }
   };
   cata3(id);
+  activeCategoryId = id;
 }
+
+let activeCategoryId = null;
+let currentPets = [];
 
 let cata = async () => {
   let catagor = await fetch(
@@ -48,6 +54,7 @@ const loadCatagory = async () => {
   );
   let data = await result.json();
   displayCard(data);
+  currentPets = data.pets;
 };
 
 const displayCard = (data) => {
@@ -55,8 +62,9 @@ const displayCard = (data) => {
 };
 
 function displayCategoryCards(pets) {
+  let cardContrainer = document.getElementById("cards");
+  cardContrainer.innerHTML = "";
   pets.forEach((pet) => {
-    let cardContrainer = document.getElementById("cards");
     const petCard = document.createElement("div");
     petCard.classList = " petCard p-5 rounded-xl border my-5 ";
     petCard.innerHTML = `<img src="${pet.image}" class=" w-[25rem] rounded-xl"/>
@@ -105,24 +113,24 @@ async function detailBtn(petId) {
   );
   let pet = await result.json();
 
-  document.getElementById("modal-pet-name").textContent = pet.data.pet_name;
+  document.getElementById("modal-pet-name").textContent = pet.petData.pet_name;
   document.getElementById("modal-details").innerHTML = `
-      <img src="${pet.data.image}" class="w-full mb-4">
-      <p>Breed: ${pet.data.breed}</p>
-      <p>Birth: ${pet.data.date_of_birth}</p>
-      <p>Gender: ${pet.data.gender}</p>
-      <p>Price: $${pet.data.price}</p>
-      <p>Details: ${pet.data.pet_details}</p>
-  `;
+          <img src="${pet.petData.image}" class="w-full mb-4">
+          <p>Breed: ${pet.petData.breed || "Not Available"}</p>
+          <p>Birth: ${pet.petData.date_of_birth || "Not Available"}</p>
+          <p>Gender: ${pet.petData.gender || "Not Available"}</p>
+          <p>Price: $${pet.petData.price || "Not Available"}</p>
+          <p>Details: ${pet.petData.pet_details || "Not Available"}</p>
+      `;
 
   document.getElementById("pet-details-modal").classList.remove("hidden");
 }
 
-document
-  .getElementById("close-modal-button")
-  .addEventListener("click", function () {
-    document.getElementById("pet-details-modal").classList.add("hidden");
-  });
+// Attach event listener after modal is made visible
+document.getElementById("closeModel").addEventListener("click", function () {
+  console.log("hit");
+  document.getElementById("pet-details-modal").classList.add("hidden");
+});
 
 document
   .getElementById("mobile-menu-button")
@@ -148,13 +156,16 @@ function adoptBtn(button) {
   }, 1000);
 }
 
-// Modal HTML (add this to your HTML body)
 document.body.innerHTML += `
-<div id="pet-details-modal" class="hidden fixed inset-0 bg-black bg-opacity-50  justify-center items-center">
+<div id="pet-details-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 justify-center items-center">
   <div class="bg-white p-8 rounded-lg w-1/2">
       <h2 id="modal-pet-name" class="text-2xl font-bold mb-4"></h2>
       <div id="modal-details"></div>
-      <button id="close-modal-button" class="bg-gray-300 p-2 rounded-md mt-4">Close</button>
-  </div>
-</div>
-`;
+s  </div>
+</div>`;
+
+document.getElementById("Sortbutton").addEventListener("click", () => {
+  let sortedPets = [...currentPets];
+  sortedPets.sort((a, b) => b.price - a.price);
+  displayCategoryCards(sortedPets);
+});
